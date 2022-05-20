@@ -9,7 +9,7 @@ defaults:
     shell: bash
 
 env:
-  LINK: https://mega.nz/file/APg0GLhK#XSkQ6QPXY-lNV_Xs7ps4tw0ko6ktvuXCxrh8G789rhs
+  LINK: https://mega.nz/file/o5131KhL#F68AXB9vZusHp-nkD1oBPFs9y7q-K_uh08w88Obwxfg
   RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
   TYPE_FILE: apk
 
