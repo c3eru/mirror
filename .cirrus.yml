@@ -1,0 +1,30 @@
+env: 
+#  ENCRYPTED
+    RCLONE: ""
+    
+    
+#  CIRRUS FLAG
+    CIRRUS_CLONE_DEPTH: 1
+    CIRRUS_WORKING_DIR: /tmp/cirrus-ci-build
+       
+task:
+  name: "Mirror..."
+  only_if: $CIRRUS_REPO_OWNER == ''
+  timeout_in: 1h
+  container:
+      image: anggit86/docker:cirrus
+      cpu: 8
+      memory: 32G
+      
+  Environment_script:
+      - mkdir -p ~/.config/rclone
+      - echo "$RCLONE" > ~/.config/rclone/rclone.conf
+      - apt-get update -qqy -y
+      - apt-get install --no-install-recommends -y
+      - apt-get install wget -y
+      - apt-get autoremove -qqy  -y
+      - apt-get autoclean -qqy -y
+      - rm -rf /var/lib/apt/lists/*
+
+  Mirror_script:
+      - ./mirror.sh
