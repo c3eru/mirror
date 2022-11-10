@@ -9,7 +9,7 @@ env:
        
 task:
   name: "Mirror..."
-  only_if: $CIRRUS_REPO_OWNER == ''
+  only_if: $CIRRUS_REPO_OWNER == 'c3eru'
   timeout_in: 1h
   container:
       image: anggit86/docker:cirrus
