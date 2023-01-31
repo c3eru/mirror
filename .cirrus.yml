@@ -1,6 +1,6 @@
 env: 
 #  ENCRYPTED
-    RCLONE: "ENCRYPTED[91ffb15b278f84622f8d5728f923f8ab7f73c1bd1e599b7c13a51c186ffad3122f19982d4297cac5236724b53d5aeaec]"
+    RCLONE: "ENCRYPTED[1c856831c6bf80c141e7d12e74f6696672e5a1e19517a7635faaed13d0421c2e6f3d9603efcad29ea698f88222f013f2]"
     
     
 #  CIRRUS FLAG
@@ -22,6 +22,8 @@ task:
       - apt-get update -qqy -y
       - apt-get install --no-install-recommends -y
       - apt-get install wget -y
+      - apt-get install zip -y
+      - apt-get install unzip -y
       - apt-get autoremove -qqy  -y
       - apt-get autoclean -qqy -y
       - rm -rf /var/lib/apt/lists/*
